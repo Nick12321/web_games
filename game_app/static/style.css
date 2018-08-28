@@ -1,0 +1,91 @@
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-family: Arial;
+    margin-left: 15%;
+    margin-right:15%;
+}
+h1 {
+    font-family: Georgia;
+    font-size: 28px;
+
+}
+#turnHolder {
+    font-size: 48px;
+    }
+
+#turnText {
+    font-size: 28px;
+    }
+
+#table {
+    border-collapse: collapse;
+    position: relative;
+    display: flex;
+    font-size: 160px;
+}
+
+td {
+   padding:20px;
+   border: 5px #666 solid;
+   text-align: center;
+   width: 20%;
+}
+#square0 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square1 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square2 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square3 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square4 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square5 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square6 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square7 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}
+#square8 {
+    font-size: 60px;
+    color: red;
+    text-align: center;
+}

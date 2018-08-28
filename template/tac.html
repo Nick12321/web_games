@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+    <head>
+        <title>Tic-Tac-Toe!</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type='text/javascript' src='{% static 'gameV1_9.js' %}'></script>
+
+    </head>
+    <body>
+        <h2>For thousands of years, people have been battling for supremacy... </h2>
+        <h1>CONQUER YOUR FOE!</h1>
+        <span> <text id = "turnHolder"> </text id> <text id = "turnText"> </text id> </span>
+        <p></p>
+        <table class="table">
+            <table width=relative>
+            <table height=relative>
+            <div id='target'>
+            <tr>
+                <td class = "grid" id="square0">&nbsp;</td>
+                <td class = "grid" id="square1">&nbsp;</td>
+                <td class = "grid" id="square2">&nbsp;</td>
+            </tr>
+            </div>
+
+            <tr>
+                <td class = "grid" id="square3">&nbsp;</td>
+                <td class = "grid" id="square4">&nbsp;</td>
+                <td class = "grid" id="square5">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td class = "grid" id="square6">&nbsp;</td>
+                <td class = "grid" id="square7">&nbsp;</td>
+                <td class = "grid" id="square8">&nbsp;</td>
+            </tr>
+        </table>
+
+
+
+    </body>
+
+</html>
