@@ -2,17 +2,32 @@ $( document ).ready(function() {
     readyPlayerOne();
     playGame();
     })
+
+    var playerNames = []
     
     function readyPlayerOne() {
-        let descMove = "Has first turn!!";
-        setTurnText(descMove);
         let currentPlayer = Math.round(Math.random());
-        if (currentPlayer === 0) {        
-            setTurnHolder("X");        
+        let currentPlayerName = Math.round(Math.random());
+            if (currentPlayerName == 0){
+                playerNames.push(player1)
+                playerNames.push(player2)
+            }else{
+                playerNames.push(player2)
+                playerNames.push(player1)
+            }
+
+
+        if (currentPlayer === 0) {   
+            let descMove = playerNames[0] + " Has first turn!!";     
+            setTurnHolder("X");
+            setTurnText(descMove);        
         }
-        else {        
-            setTurnHolder("O");        
+        else {  
+            let descMove = playerNames[1] + " Has first turn!!";         
+            setTurnHolder("O");    
+            setTurnText(descMove);    
         }
+
     }
     
     function playGame() {    
@@ -36,16 +51,18 @@ $( document ).ready(function() {
                 if (currentPlayer === "O" ) {
                     playerOh.push(currentSquare);                    
                     checkWin(playerOh, currentPlayer, numMoves);
-                    currentPlayer = 'X';                
+                    currentPlayer = 'X';     
+                    setTurnText(playerNames[0] + " Has Next Move!!!");           
                 }
                 else {
                     playerX.push(currentSquare);                    
                     checkWin(playerX, currentPlayer, numMoves);
                     currentPlayer = 'O';
+                    setTurnText(playerNames[1] + " Has Next Move!!!");
                 }
                 numMoves = (playerOh.length + playerX.length);
                 checkDraw(numMoves);
-                setTurnText("  Has Next Move!!!");
+                
                 setTurnHolder(currentPlayer);                
             }
             else {
@@ -92,10 +109,19 @@ $( document ).ready(function() {
                         match.push(winTemp);
                         currentTemp = match.length;
                         if (currentTemp > 2) {
-                            setTurnText(" HAS WON!!!");
                             setTurnHolder(currentPlayer);
-                            alert(currentPlayer + " HAS WON!!!");                            
-                            location.reload();
+                            var winning_player = "";
+                            if (currentPlayer == 'X'){
+                                var winning_player = playerNames[0];
+                            }else{
+                                var winning_player = playerNames[1];
+                            }
+                            alert(currentPlayer + " " + winning_player + " HAS WON!!!"); 
+                            setTurnText(winning_player + " HAS WON!!!");   
+                            var x = document.getElementById("playagainbtn"); 
+                            x.style.display = "block";                       
+                            var y = document.getElementById("submitScoreBtn"); 
+                            y.click();
                         }
                         
                     }
@@ -106,6 +132,10 @@ $( document ).ready(function() {
             
   
             }           
+        }
+    
+        function playagain(){
+            location.reload();
         }
         
     

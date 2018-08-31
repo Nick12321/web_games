@@ -4,5 +4,7 @@ from . import views
 urlpatterns  =[
     path ('tictactoe/', views.game),
     path ('', views.home),
-    path('<char:name>/', views.addPlayer )
+    path ('addPlayer/', views.addPlayer),
+    path ('choosePlayer/', views.choosePlayer),
+    path ('saveScore/', views.saveScore),
 ]

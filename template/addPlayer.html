@@ -7,18 +7,17 @@
 
     </head>
     <body>
-
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add a Player">
+        </form>
+        <br>
+        {{ error }}
+        <br>
       <div class="button">
-        <a href="/choosePlayer">Play</a>
+        <a href="/"> Go Home</a>
       </div>
-      <div class="button">
-        <a href="/addPlayer">Add Player</a>
-      </div>
-      <div  class="/button">
-        see results
-      </div>
-      <br>
-      {{ error }}
 
     </body>
 </html>

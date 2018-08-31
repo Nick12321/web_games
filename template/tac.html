@@ -4,10 +4,16 @@
         <title>Tic-Tac-Toe!</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
         <script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            var player1 = '{{ player1 }}';
+            var player2 = '{{ player2 }}';
+        </script>
         <script type='text/javascript' src='{% static 'gameV1_9.js' %}'></script>
 
     </head>
     <body>
+    {{ player1 }}
+    {{ player2 }}
         <h2>For thousands of years, people have been battling for supremacy... </h2>
         <h1>CONQUER YOUR FOE!</h1>
         <span> <text id = "turnHolder"> </text id> <text id = "turnText"> </text id> </span>
@@ -36,7 +42,23 @@
             </tr>
         </table>
 
+    <div style="display: none;" onclick="playagain()" class="button" id="playagainbtn">
+        Play Again
+    </div>
 
+    <form style="visibility: hidden;" method="POST" action="/saveScore/">
+        {% csrf_token %}
+        <input type="hidden" value="{{ player1 }}" name="player1"></input>
+        <input type="hidden" value="{{ player2 }}" name="player2"></input>
+        <input type="hidden" value="X" name="score" id="score"></input>
+        <input type="submit" id="submitScoreBtn" value="Submit Score"></input>
+    </form>
+
+    <br>
+
+    <div class="button">
+        <a href="/"> Go Home</a>
+    </div>
 
     </body>
 
